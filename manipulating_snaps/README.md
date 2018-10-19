@@ -1,6 +1,6 @@
 ## keeping track of these files
 
-### HI_hybrid_lib.py
+### manipulate_snaps_lib.py
 function for writing/appending the HI block to 
 gadget-like snapshot
 

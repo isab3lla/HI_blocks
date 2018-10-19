@@ -3,7 +3,7 @@ import readsnap
 import sys,os
 import struct
 import HI_illustris as HIill
-import cmXCMBlens_library as XL
+import manipulate_snaps_lib as MSL
 
 
 rho_crit=2.77536627e11 #h^2 Msun/Mpc^3
@@ -83,7 +83,7 @@ for i in range(total_snap):
 
 	## setting units for M_HI as 1e10 Msun/h
 	M_HI = M_HI/1.0e10
-	XL.new_block(snapshot_fname,out_fname,M_HI)
+	MSL.new_block(snapshot_fname,out_fname,M_HI)
 
 
 ##############################################################################

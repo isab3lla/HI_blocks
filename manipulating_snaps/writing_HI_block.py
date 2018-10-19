@@ -2,7 +2,7 @@ import numpy as np
 import readsnap
 import sys,os
 import struct
-import HI_illustris as HIill
+import HI_hybrid_lib as HIL
 import manipulate_snaps_lib as MSL
 
 
@@ -29,7 +29,7 @@ print '\n\n    USING',Np_halo,'particles per halo\n\n'
 ## looping over all snapshots
 for i in range(total_snap):
 
-	snapshot_fname,groups_fname,groups_number,out_fname = HIill.getting_sim_paths(sim,i)
+	snapshot_fname,groups_fname,groups_number,out_fname = HIL.getting_sim_paths(sim,i)
 
 	
 	#read snapshot head and obtain BoxSize, Omega_m and Omega_L
@@ -66,7 +66,7 @@ for i in range(total_snap):
 
 	print '\n\nNow passing to the HI distribution . . .' 
 	## finding the HI-carrying particles
-	OmegaHI,IDs_g,M_HI = HIill.CR15_HI_assignment(snapshot_fname,groups_fname,groups_number,Np_halo)
+	OmegaHI,IDs_g,M_HI = HIL.CR15_HI_assignment(snapshot_fname,groups_fname,groups_number,Np_halo)
 
 	del OmegaHI,IDs_g
 	## the index of M_HI is the corresponding ID-1

@@ -1,5 +1,5 @@
 import numpy as np
-import HI_illustris as HIill
+import HI_hybrid_lib as HIL
 import readsnap
 import Power_spectrum_library as PSL
 import CIC_library as CIC
@@ -31,7 +31,7 @@ isnap=13
 
 
 
-dumb1,dumb2,dumb3,snapshot_fname = HIill.getting_sim_paths(sim,isnap)
+dumb1,dumb2,dumb3,snapshot_fname = HIL.getting_sim_paths(sim,isnap)
 
 f_out = 'HI_Pk_'+sim[:-6]+'_z'+z_str[isnap]+'_fromSnap.dat'
 

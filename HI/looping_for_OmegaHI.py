@@ -1,5 +1,5 @@
 import numpy as np
-import HI_illustris as HIill
+import HI_hybrid_lib as HIL
 
 #############################################################################
 
@@ -25,8 +25,8 @@ Omega_HI_all = np.zeros((total_snap))
 j=0
 for i in [0,4,8,13]:
 
-	snapshot_fname,groups_fname,groups_number,dumb0 = HIill.getting_sim_paths(sim,i)
-	OmegaHI,dumb1,dumb2 = HIill.illustris_HI_assignment(snapshot_fname,groups_fname,groups_number,64)
+	snapshot_fname,groups_fname,groups_number,dumb0 = HIL.getting_sim_paths(sim,i)
+	OmegaHI,dumb1,dumb2 = HIL.illustris_HI_assignment(snapshot_fname,groups_fname,groups_number,64)
 
 	Omega_HI_all[j] = OmegaHI; j+=1
 	del OmegaHI,dumb1,dumb2

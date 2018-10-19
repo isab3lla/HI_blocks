@@ -1,5 +1,5 @@
 import numpy as np
-import HI_illustris as HIill
+import HI_hybrid_lib as HIL
 import readsnap
 import Power_spectrum_library as PSL
 import CIC_library as CIC
@@ -40,7 +40,7 @@ f_out = 'HI_Pk_'+sim[:-6]+'_z'+z_str[isnap]+'_'+str(Np_halo)+'pHalo_CR15.dat'
 
 #############################################################################
 
-snapshot_fname,groups_fname,groups_number,dumb = HIill.getting_sim_paths(sim,isnap)
+snapshot_fname,groups_fname,groups_number,dumb = HIL.getting_sim_paths(sim,isnap)
 del dumb
 
 dims3=dims**3
@@ -74,7 +74,7 @@ pos=np.empty((Ntotal,3),dtype=np.float32); pos[ID_unsort]=pos_unsort
 #OmegaHI,IDs_g,M_HI=HIill.illustris_HI_assignment(snapshot_fname,groups_fname,
 #                                     groups_number,Np_halo)
 
-OmegaHI,IDs_g,M_HI=HIill.CR15_HI_assignment(snapshot_fname,groups_fname,
+OmegaHI,IDs_g,M_HI=HIL.CR15_HI_assignment(snapshot_fname,groups_fname,
                                      groups_number,Np_halo)
 
 print 'assigned mass to particles:'
